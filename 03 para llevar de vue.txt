@@ -1,0 +1,412 @@
+creación de proyecto 
+para empezar a trabajar en esta parte tendremos que descargar Vue, abriremos la terminal de comando podemos darle inicio + r y nos aparecerá una ventana en donde escribiremos cmd y luego le damos enter en la terminal escribiremos 
+-npm install -g @vue/cli
+desde ahí podemos escoger Vue 2 o 3 y luego le daremos a las opciones por defecto que aparecen y escogeremos como gestor de paquetes npm de node js.
+una vez instalado veremos la versión escribiendo Vue --versión 
+tenemos 
+ 
+es importante saber que mientras más avanzado sea Vue este irán cambiando a una versión mayor dejando atrás versiones que a su vez quedan obsoletas, si la versión cambio mucho entonces el primer número cambia si hace algún cambio significativo el segundo y si ocurre algún cambio que no afecta tanto pero puede llegar a presentar algunos errores y el ultimo son cambios de versiones no tan significativos que pueden adherirse sin problemas con nuevas versiones sin afectar el funcionamiento del código.
+
+lo que vamos a hacer a continuación es crear una carpeta nueva donde almacenaremos las carpetas de Vue junto con sus librerías y un modelo de prueba, para esto accederemos a la carpeta mediante el terminar de comandos y escribiremos en el 
+-vue create 03-fundamentos 
+nos aparecerá un menú interactivo donde podremos escoger distintas opciones
+la primera es para escoger la versión de Vue, en este caso iremos por la opción manual
+la segunda pantalla no presentara una serie de librerías que podremos escoger para que se descarguen en nuestra carpeta, estas se seleccionan y deseleccionan una de estas librerías es babel, donde este nos permitirá mantener nuestro código actualizado con todas las versiones de los navegadores compilando el código para que sea compatible en los distintos casos donde pase nuestro proyecto, entonces lo único que seleccionaríamos para continuar seria 
+1) Choose Vue version
+2) Babel
+3) Unit testing
+
+se pueden el resto de las librerías se pueden ir seleccionando más adelante instalándolas con nodejs.
+
+después de darle enter seleccionaremos la versión 3 de Vue luego nos presentara una pantalla donde nos dará la una selección de Vue podemos seleccionar con jest después nos preguntara si queremos trabajar directamente con paquaje json o con un archivo dedicado, escogeremos un archivo dedicado y continuaremos, la configuración que escogeremos no influye de forma tan significativa nuestro código así que no tenemos que preocuparnos tanto por las opciones que escojamos después ya que estas se podrán corregir si queremos, por ultimo nos preguntara si queremos guardar los cambios a lo que responderemos con no, después estas librerías empezaran a descargarse.
+ya instalado accedemos a la carpeta con 
+-cd nombreCarpeta
+ y correremos el servidor con 
+-npm run serve 
+una vez montado nuestro servidor podemos acceder a este por medio de un navegador web escribiendo la ruta 
+-http://localhost:8080/
+todos los cambios que hagamos en el código se verán reflejados en navegador 
+git 
+Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia, la confiabilidad y compatibilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente. Su propósito es llevar registro de los cambios en archivos de computadora incluyendo coordinar el trabajo que varias personas realizan sobre archivos compartidos en un repositorio de código.
+
+Al principio, Git se pensó como un motor de bajo nivel sobre el cual otros pudieran escribir la interfaz de usuario o front end como Cogito o StGIT. 2)Sin embargo, Git se ha convertido desde entonces en un sistema de control de versiones con funcionalidad plena. 3)Hay algunos proyectos de mucha relevancia que ya usan Git, en particular, el grupo de programación del núcleo Linux.
+
+El mantenimiento del software Git está actualmente (2009) supervisado por Junio Hamano, quien recibe contribuciones al código de alrededor de 280 programadores. En cuanto a derechos de autor Git es un software libre distribuible bajo los términos de la versión 2 de la Licencia Pública General de GNU.
+git permite controlar las versiones de nuestro proyecto con el fin de un trabajo en conjunto con distintos programadores, es una herramienta fundamental en la cual tenemos que saber trabajar, no es muy complicada pero muy util si queremos trabajar en la programación
+
+estructura de directorios generada por defecto
+es importante recordar que el servidor se puede montar con 
+-npm run server   
+ y en caso se estar con yarn 
+- yarn run  
+para cerrar clickeamos control + c 
+
+ 
+explicaremos cada uno de los archivos encontrados luego de instalar los componentes con vue create
+es posible que se encuentren otros elementos que no le aparezcan iguales todos tienen carpetas similares como src node jscongif.json  package.json vue.config.js. entonces la primera de la que hablaremos será de 
+node_modules) estos son las librerías de npm o yarn, aquí se encontrará todos los directorios que podremos usar para nuestro código. en esta librería podremos hacer cambios y estos cambios se verán reflejados de modo que cuando subamos los cambios a algún repositorio estos cambios se subirán también, pero es una práctica que no se acostumbra a hacer ya que puede traer inconvenientes a futuro ya que son funciones preestablecidas que cumplen una función estándar. 
+esta carpeta node_module pesa aproximadamente 150 mg sin embargo nuestro eso no quiere decir que nuestro proyecto contendrá el 100% de todas estas librerías, lo que usara nuestra aplicación estará explicado en el archivo package.json, cuando subamos nuestros cambios esta carpeta se ignorara al menos que hagamos algún cambio en ella por su puesto, es por eso que cuando descargamos una librería de internet que requiere de esta carpeta se debe descargar las librerías por aparte.
+public)  es el directorio público, desde aquí se montara toda la aplicación final, esta carpeta contiene el único archivo html de todo el proyecto Vue, aquí podemos guardar las imágenes que necesitemos para nuestro proyecto, también podemos cambiar ciertas cosas puntuales como el título de las pestañas, el archivi html es un archivo que no se suele manipular mucho, también en esta carpeta publica podemos crear un archivo html adicional como oofline.html para presentar una pantalla en caso de que no tenga conexión a internet u otros casos.
+véase que en el archivo index.html de public tenemos una sentencia 
+    <noscript>
+      <strong>We're sorry but gws-admin doesn't work properly without JavaScript enabled. Please enable it to continue. </strong>
+    </noscript>
+esta es para arrojar un mensaje de advertencia en caso de que el usuario no tenga JavaScript, recuérdese que Vue es un framework de JavaScript por lo que no funcionara si el usuario no tiene JavaScript en su navegador.
+tests) esta carpeta es opcional en la que evaluaremos las pruebas para ver cómo se comporta nuestro proyecto en las pruebas. con esto veremos nuestros componentes viendo 
+.gitignore) este archivo está hecho para que git ignore determinados archivos que no queramos que suba a nuestro repositorio. git toma en cuenta todos los archivos que están dentro de la carpeta una vez este inicializado git en tal carpeta, pero no queremos que suba todos los archivos que están en ella por lo cual declararemos todos los archivos que no queremos que se cambien en este archivo.
+ es simple su declaración, solo escribiremos el nombre del archivo dentro del archivo. gitignore 
+babel.config.js) este es el archivo babel que contiene lo necesario para funcionar, si se quiere hacer la conversión de algún archivo mediante babel se especificara en este archivo.
+pacjage.json)  este archivo es muy importante, este contiene las librerías que nuestro proyecto usara, este archivo no se modifica directamente si no que se modifica mediante los comandos que coloquemos en terminal de comandos, están las dependencias que son los las librerías que se subirá en el modo de producción, es decir son las librerías que nuestro proyecto necesitara para funcionar y están los 
+devDependencies, estos son las librerías que usara el proyecto solo en la etapa de desarrollo, estas librerías no acompañaran al proyecto en modo de producción solo se usaran cuando estemos modificando el proyecto.
+los scripts son los comandos llamados mediante el terminal, esto hace un llamado que desembocar alguna función necesario, ejemplo 
+-npm run serve 
+esto ejecuta el script serve el cual trae con sigo un conjunto de funciones.
+readme.md) este es un manual para nuestro proyecto, este archivo podemos agregar algún dato consideres que se daba de saber, o alguna nota que queramos comunicar en nuestro proyecto.
+Source
+Este archivo source abreviado src contendrá nuestro proyecto es el archivo que más manipularemos el cual contendrá muchas de las sentencias necesarias para lograr el funcionamiento que queramos en nuestro proyecto, este está constituido de múltiples carpetas y archivos 
+Assets) tenemos aquí el logo que se presenta en pantalla 
+
+Vea en los elementos que la declaración de búsqueda del logo no está dentro de assets para que en caso de que cambie la imagen el proyecto se actualice sin tener que refrescar todo 
+Components) dentro de esta carpeta contendremos todos los componentes necesarios para nuestro proyecto, más adelante hablaremos sobre cómo crear componentes y que son, por los momentos cuando se crea un nuevo proyecto en Vue la carpeta componentes viene con un archivo llamado HelloWorld.vue, este componente está controlando los elementos que aparecen en pantalla. Si analizas el archivo 
+
+Este contendrá varias rutas y accesos de imágenes, si hacemos algún cambio podremos ver como este cambio se verá reflejado en nuestro proyecto.
+Desde ahí podremos ver cómo funciona Vue de una forma resumida, este archivo está compuesto por un témplate que es el código html, un script que es el código JavaScript y el style que es css, algo único en Vue ya que podremos tener estos tres tipos de códigos distintos en un solo componente trabajando de forma conjunta 
+App.vue y main.js) estos archivos en el momento de crear el proyecto de vue están enlazados con otros archivos de forma que todo funcione de forma conjunta y así hacer que no ocurra error.
+
+Mi primer componente
+Para comprender mejor un componente vamos al archivo App.vue y veremos la estructura de este. En el template tenemos el texto que se presenta en pantalla, in img que da referencia a la ubicación del icono de Vue que se encuentra en assets. Tenemos el script que contiene la importación de helloWorld el componente que está en la carpeta components. Lo que está en export default contienen parte de las declaraciones JavaScript de nuestro proyectó el name es el nombre del componente el cual no es tan importante. Note que se usa la metodología de cameCase, se usa cuando son variables compuestas por varias palabras como por ejemplo helloWorld la primera palabra minúscula la segunda empieza en mayúscula y todo pegado.
+Vamos a borrar el componente helloWorld.vue pero para esto tendremos que eliminar en el App.vue todas las direccione que apunten a este para evitar errores 
+
+Tendremos que instalar un paquete especial para que el editor de código que estemos utilizando pueda entender de forma correcta las sentencias y archivos de Vue, en caso de que estes trabajando con visual studio code este detectara el lenguaje de vue y te estará dando la opción de instalar vue para que puedas trabajar con el en caso contrario escribes en el buscador de extensiones Vue lenguaje y descargar la versión más actualizada. Sabremos que funciona correctamente cuando los archivos. vue se coloreen.
+Empezaremos creando un componente llamador Counter.vue en la carpeta components 
+Este modelo contendrá que crear un nuevo componente y enlazarlo con app.vue, ten en cuenta que los componentes siempre empiezan en mayúsculas y tienen que tener came case, es decir tienen que tener nombres compuestos ejemplo ContadorNuevo.vue. con el nombre después de default podrás dividir los componentes, para ver estas diferencias es recomendado instalar la herramienta vue en el navegador 
+Vue.js devtools - Chrome Web Store (google.com)
+Cuando estes trabajando en vue podras notar que es sensible a los espacios y no se debe mezclar espacios con tabulares para organizar la sintaxis del código.
+
+De esta forma deberían de quedar los dos componentes para poder estar enlazados 
+
+Esta extensión nos ayudara a comprender nuestro proyecto 
+ 
+Estado del componente y devTool
+Aplicaremos este código
+
+Vea el error que ocurre al tener los las paréntesis pegados a data por eso tenemos que ser cuidadosos con el código de Vue ya que es sensible a estos detalles, una vez listo veremos como mediante el return convertimos en algo que parece un a variable un elemento que puede ser editado dinámicamente 
+
+Usando la herramienta de desarrollo de vue podemos editar este valor y veremos cómo se modifica instantáneamente en pantalla, estos son los estados. Cada uno de estos casos por los que pasa el proyecto donde ocurre un cambio se considera un estado en donde el proyecto no se refresca por completo si no que sufre pequeñas modificaciones, esto es una de las ventajas de los frameworks de JavaScript tanto vue angular como react pueden efectuar cambios puntuales a ciertos elementos de la página sin tener que refrescar toda la página.
+
+
+Propiedades computadas 
+Las propiedades computados son métodos que pueden cambiar el comportamiento del proyecto tal como lo haría una función, estos se llaman en el script de nuestro proyecto con la palabra de methods:{//metodos} seguido del método que le podemos dar cualquier nombre con la siguiente semántica 
+getMetodo(){//codigo} vea la similitud que tiene con las funciones. Aparte de los methods tenemos uno similar llamado computed el cual funciona con la memoria cachet mejorando el proceso de mantener los datos actualizados ya que esto ocasiona que el dinamismo trabaje de forma distinta, es usado cuando se quiere que el cambio efectuado se ejecute a penas ocurra un cambio esto no quiere decir que es mejor que methods, si no que es utilizado para casos distintos, un methods funciona correctamente cuando se tiene que leer una función o ejecutar un evento al llamarse y el component funciona bien cuando se tiene que ejercer cambios constantes a penas se detecte una cierta condición, los componente se declaran igual que los methods pero son llamados como una propiedad {{computes}} podemos ver la diferencia entre methods y computend llamando varias veces un method de y un computed, cuando llamamos varias veces el methods se ejecuta varias veces mientras que el computed se ejecuta una sola vez ya que vue comprueba que el computed tiene el mismo dato que el computed anterior entonces no lo ejecuta más.  
+
+Incremento y decremento
+En esta parte vamos a crear dos botones que aumenten o disminuya el counted, empezaremos modificando los estilos de css en la etiqueta style.
+
+  button {
+    background-color:aquamarine;
+    border-radius:5px;
+    color:white;
+    margin: 0 5px;
+  }
+
+
+Lógicamente esto después de crear el botón en el template 
+  <div>
+    <button> +1 </button>
+    <button> -1 </button>
+  </div>
+
+No es obligatorio pero los estilos deberían de estar ordenados alfabéticamente 
+
+Para aumentar y disminuir el counter crearemos un método con la sintasix this.counte++ y otro con this.counte—
+Los botones accederán a estos por medio de v-on:click=”nombreDeMetodo” o también por medio de @click=”nombreDeMetodo”
+
+
+Properties props 
+fíjese que si llamamos dos veces el componente en app.js y aumenta el valor en uno de ellos los datos no se cambiaran en ambos casos 
+
+Estos ya que vue trabaja con los estados de los componentes manteniéndolos a pesar de las modificaciones. Ahora si quisieras cambiar ciertos elementos del componente en uno y en otro no tenemos que usar los properties. Las propiedades mandaran parámetros al componente que podrá usar el componente después para presentar la información 
+<componente title=”propiedad-envidada”> estas propiedades si son recomendadas separarlas por – y escribirlas en minúsculas todas.
+Ya enviado desde el app.js podremos acceder a estos componentes desde props que definiremos al comiendo del export defauld 
+  export default {
+  props: ['title'],
+con esto Podemos crear una propiedad computada que detecte si existe la prop de un componente y si no este coloque una propiedad por defecto, esto de la siguiente manera 
+<template>
+  <h2> {{ customeTitle }}</h2>
+
+
+
+  <script>
+  computed: { 
+    customeTitle () {
+      return this.title ? this.title : 'valor por defecto'
+    }
+  }
+
+
+Otras maneras de definir las props.
+Otra manera de trabajar con los props es traer etas propiedades a la data return y desde ahí lo podemos trabajar con más libertad
+<script>
+export default {
+  props: ['start'],
+  // name: 'Vue/Multi-Word-Component'
+  data () {
+    return {
+      name: 'ounter',
+      counter: parseInt(this.start)
+    }
+  },
+ Para evitar tener que pasear las variables podemos hacer una llamada mas simple desde los props.
+
+  props: {
+    title: String,
+    start: Number
+  },
+
+Un dato curioso al enviar las props es sentenciar los props con v-bind para evitar que se envié algún dato que no corresponda a lo que se tenga que recibir, v-bind puede ayudar para enviar alguna sentencia JavaScript como props.
+De esta forma se mantiene el control de las propertis aun así es necesario tener concordancia con lo que se envía y se recibe, esto se puede mantener de mejor manera con la siguiente sintaxis 
+ props: {
+    title: String,
+    start: {
+      type: Number,
+      required: true
+    }
+  },
+
+Lo que estaría haciendo es restringir el resultado para que su valor tenga que llegar obligatoriamente como número, esto con la ayuda de required 
+Así como propiedad required también esta la propiedad defauld que es con el fin de establecer un dato por defecto, esto en caso de que no llegue algún dato en props entonces establezca el valor que se estableció por defecto.
+
+Otro muy importante son los validators, estos validators restringirá las propertis para acegurar que lleguen los datos como se declaran y pase el validador.
+  props: {
+    title: String,
+    start: {
+      type: Number,
+      required: true,
+      default: 10,
+      validator (value) {
+        return value > 100
+      }
+    }
+  },
+
+
+En resumen, tenemos todas estas propiedades para trabajar
+Vue.component('my-component', {
+  props: {
+    // Comprobación de tipo básico (`null` coincide con cualquier tipo)
+    propA: Number,
+    // Múltiples tipos posibles
+    propB: [String, Number],
+    // Cadena de texto obligatoria
+    propC: {
+      type: String,
+      required: true
+    },
+    // Número con un valor por defecto
+    propD: {
+      type: Number,
+      default: 100
+    },
+    // Objeto con un valor por defecto
+    propE: {
+      type: Object,
+      // Los valores predeterminados del objeto o matriz deben devolverse desde
+      // una función de fábrica
+      default: function () {
+        return { message: 'hola' }
+      }
+    },
+    // Función de validación personalizada
+    propF: {
+      validator: function (value) {
+        // El valor debe coincidir con una de estas cadenas de texto
+        return ['success', 'warning', 'danger'].indexOf(value) !== -1
+      }
+    }
+  }
+})
+
+
+Creación de ejercicio con los temas vistos
+Vamos a crear un proyecto a partir de lo que tenemos creados que sea capas de tomar un string y luego presentar una respuesta aleatoria con una imagen igual toma de forma aleatoria con relación a la respuesta del mensaje enviado.
+Empezamos creando un nuevo componente que llamaremos indesicion.vue el cual tendrá lo básico para empezar luego lo relacionaremos con el componente App.vue 
+<template>
+  <!-- <img alt="Vue logo" src="./assets/logo.png">
+  <Counter :start="10"  } /> -->
+  <Indecision />
+</template>
+<script>
+// import Counter from './components/CounterNuevo.vue'
+import Indecision from './components/Indecision.vue'
+export default {
+  name: 'App',
+  components: {
+    Indecision
+    // Counter
+  }
+}
+
+
+En el indecisión.vue insertaremos una imagen en el témplate y agregar lo input necesarios para que todo quede de forma concreta 
+<template>
+  <img src="https//via.placeholder.com/250" alt="bg">
+  <div class="bg-dark"></div>
+  <div class="indecision-container">
+    <input type="text" placeholder="Hazme una pregunta">
+    <p>Recuerda terminar con un signo de interrogacion </p>
+  </div>
+</template>
+
+
+Con esto tendremos el cascaron de nuestro proyecto a esto le agregaremos estilos css estos van a ir en Indesicion.vue 
+<style scoped>
+
+    img, .bg-dark {
+        height: 100vh;
+        left: 0px;
+        max-height: 100%;
+        max-width: 100%;
+        position: fixed;
+        top: 0px;
+        width: 100vw;
+    }
+
+    .bg-dark {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .indecision-container {
+        position: relative;
+        z-index: 99;
+    }
+    
+    input {
+        width: 250px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: none;
+    }
+    input:focus {
+        outline: none;
+    }
+
+    p {
+        color: white;
+        font-size: 20px;
+        margin-top: 0px;
+    }
+
+    h1, h2 {
+        color: white;
+    }
+    
+    h2 {
+        margin-top: 150px;
+    }
+
+</style>
+
+
+El style va después del cierre del script, con esto estaría dando como resultados los dos archivos modificados de la siguiente forma 
+
+
+
+Recuerda colocar la imagen en formato png o definir en la consulta de la imagen el formato que utilizaras y colocar esta imagen dentro de la carpeta components la cual estará junto con indecisión.vue esto para simplificar la ruta de la imagen 
+
+Watch 
+En esta ocasión usaremos watch, una herramienta muy útil cuando trabajamos con vue, su función es similar a la del component con la diferencia que no genera un return esta ejecuta una función cuando detecta un cambio en algún campo concreto que establezcamos, como su nombre lo indica watch (vigilante) el método watch vigilara el dato que queramos y en caso tal de que este dato tenga algún cambio, entonces ejecutara la función establecida en la función watch.
+Para rellenar el código vamos a manipular el código para que los datos sean mas didácticos para trabajar 
+    <input v-model="question"  type="text" placeholder="Hazme una pregunta">
+    <p>Recuerda terminar con un signo de interrogacion (?) </p>
+    <div>
+      <h2> {{ question }}</h2>
+
+ data () {
+    return {
+      question: 'Sere millonario?'
+    }
+  }
+
+
+El watch lo colocaremos dentro de export default, por lo general se coloca de ultimo después de los method computed y el resto, aunque el orden no influye en el resultado del código.
+
+ name: 'IndecisionVue',
+  data () {
+    return {
+      question: 'Sere millonario?'
+    }
+  },
+  watch: {
+    question (value, oldValue) {
+      console.log({ value, oldValue })
+    }
+  }
+
+Este watch imprimirá un mensaje en consola cada vez que el valor question tenga algún cambio. Así de simple funciona el watch.
+Este nos dará el valor actual de la variable question y nos dará el valor después de recibir un cambio.
+
+Petición http
+En este punto vamos a realizar una petición http que va a buscar en un servidor externo una imagen para usarla en nuestra aplicación.
+Vamos a trabajar con este servidor Yes Or No? yesno.wtf — foolproof™ decision-making (api available)
+Este nos dará las imágenes que estamos buscando, en el retenemos la respuesta deficina de esta forma 
+ 
+Para hacer la petición del servidor usaremos un fetch, este proceso no se ejecutara dentro del watch ya que no es recomendado usar muchos códigos en el watch por cuestiones de buena práctica, es mejor hacer la función dentro del method y luego llamarla con el watch.
+En el watch integraremos una condición como 
+  watch: {
+    question (value, oldValue) {
+      if (!value.includes('?')) return false
+      // TODO: Realizar peticion http
+      this.getAnswer()
+    }
+  }
+para que cuando el usuario coloque el signo de interrogación desencadene el evento de búsqueda el método this.getAnswer() llama al methods. 
+El método getAnswer() 
+  methods: {
+    async getAnswer () {
+      this.answer = 'Pensando...'
+      const data = await fetch('https://yesno.wft/api').then(r => r.json())
+      console.log(data)
+    }
+  },
+Usará el método la propiedad answer por lo que tendremos que definirla en el data return 
+  data () {
+    return {
+      question: null,
+      answer: null
+    }
+  },
+
+Y luego usara el método fetch el cual es el encargado de hacer la consulta al servidor externo, esto solo funciona si la función o en este caso el método es una función o método asíncrono ya que la respuesta tarda un poco en ejecutarse, en la lógica de las peticiones http se sabe que una respuesta que no sea tomada al momento llegara undefined lo que traerá consigo errores en la aplicación.  Este resultado lo podemos imprimir en pantalla mediante un <h1> también veremos el resultado del fetch en consola impresa con un console.log(data). Simple
+Lo más complejo sería el fetch y sinenvargo este hace todo el trabajo, el dato se almacena en una constante llamada data se le anuncia que espere mientras ejecuta el fetch dentro del fetch esta la ruta la cual trae el dato y el then atrapa la respuesta exitosa esta respuesta se convierte en un json como se declara en lo ultimo de la sentencia del then.
+Después de esto crearemos una carpeta nueva llamada css con un archivo style.css
+html, body {
+    background-color: black;
+}
+
+Esto lo usaremos de forma global en nuestra aplicación por lo que tendremos que acceder a el archivo main e importar este archivo css agregando un importa si 
+import './css/styles.css'
+
+ya por último estaríamos puliendo algunos detalles de nuestra aplicación, vamos a intentar que nuestra aplicación cada vez que escribamos algo esta borre la imagen y el contenido que se estableció en pantalla 
+
+
+
+Usaremos para esto una propiedad llamada 
+isValidQuestion: false
+
+luego de esto condicionaremos el div donde se presenta el resultado con un v-if 
+
+ <div v-if="isValidQuestion">
+ Luego estableceremos el momento en donde isValidQuestion cambie lo cual lo haremos en el watch para que con cada cambio el div donde se presentan los datos desaparezca y aparezca cuando le escribamos signo de interrogación (¿?)
+  watch: {
+    question (value, oldValue) {
+      this.isValidQuestion = false
+      if (!value.includes('?')) return
+      this.isValidQuestion = true
+      // TODO: Realizar peticion http
+      this.getAnswer()
+    }
+  }
+
+
+
+Estos datos puedes sustituirlos y veras como funciona en caso de que no lograste hacer funcionar el proyecto 
